@@ -10,15 +10,15 @@ html {
   height: 100%;
   padding: 15px;
   background: url('./img/29-39.jpg') no-repeat right bottom/350px,
-  url('./img/cartoons-spongebob-yellow-background-tooth-face-wallpaper-preview.jpg')
-  no-repeat left top/300px,
-  linear-gradient(
-  110deg,
-  rgb(252, 246, 106) 0%,
-  rgb(252, 246, 106) 48%,
-  rgb(255, 181, 159) 51%,
-  rgb(255, 181, 159) 100%
-  );
+    url('./img/cartoons-spongebob-yellow-background-tooth-face-wallpaper-preview.jpg')
+      no-repeat left top/300px,
+    linear-gradient(
+      110deg,
+      rgb(252, 246, 106) 0%,
+      rgb(252, 246, 106) 48%,
+      rgb(255, 181, 159) 51%,
+      rgb(255, 181, 159) 100%
+    );
 
   -webkit-tap-highlight-color: transparent;
 }
@@ -26,11 +26,11 @@ html {
 @media (max-width: 1280px) {
   html {
     background: linear-gradient(
-    180deg,
-    rgb(252, 246, 106) 0%,
-    rgb(252, 246, 106) 48%,
-    rgb(255, 181, 159) 51%,
-    rgb(255, 181, 159) 100%
+      180deg,
+      rgb(252, 246, 106) 0%,
+      rgb(252, 246, 106) 48%,
+      rgb(255, 181, 159) 51%,
+      rgb(255, 181, 159) 100%
     );
   }
 }
@@ -38,14 +38,14 @@ html {
 body {
   display: grid;
   grid-template-rows: auto auto;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: auto auto;
   grid-row-gap: 20px;
   margin: 0;
 }
 
 @media (max-width: 1280px) {
   body {
-    grid-template-rows: auto 50px 65px;
+    grid-template-rows: auto auto auto;
     grid-template-columns: auto;
   }
 }
@@ -83,8 +83,6 @@ input {
 }
 
 .captions {
-  position: relative;
-  display: flex;
 }
 @media (max-width: 1280px) {
   .captions {
@@ -93,21 +91,20 @@ input {
     grid-row: 3/4;
   }
 }
-.captions > .text {
-  position: absolute;
+.captions-flex-container {
+  display: flex;
+  width: 400%;
+}
+.captions .text {
+  display: none;
   padding: 15px;
   font-family: 'Gagalin', sans-serif;
   font-size: 30px;
   background-color: rgba(194, 193, 193, 0.5);
   border-radius: 15px;
-  transform: translateX(-50px);
   opacity: 0;
   transition: 0.4s;
-}
-@media (max-width: 1280px) {
-  .captions > .text {
-    transform: translateX(-100px);
-  }
+  animation: fadeIn 0.5s ease forwards;
 }
 .captions p {
   margin: 0;
@@ -161,13 +158,7 @@ input {
   border-color: rgb(104, 180, 134);
 }
 #radio1:checked ~ .captions .text:nth-child(1) {
-  transform: translateX(0);
-  opacity: 1;
-}
-@media (max-width: 1280px) {
-  #radio1:checked ~ .captions .text:nth-child(1) {
-    transform: translateX(-50%);
-  }
+  display: inline-block;
 }
 #radio1:checked ~ .container .slides img:nth-child(1) {
   opacity: 1;
@@ -187,13 +178,7 @@ input {
   border-color: rgb(104, 180, 134);
 }
 #radio2:checked ~ .captions .text:nth-child(2) {
-  transform: translateX(0);
-  opacity: 1;
-}
-@media (max-width: 1280px) {
-  #radio2:checked ~ .captions .text:nth-child(2) {
-    transform: translateX(-50%);
-  }
+  display: inline-block;
 }
 #radio2:checked ~ .container .slides img:nth-child(2) {
   opacity: 1;
@@ -213,13 +198,7 @@ input {
   border-color: rgb(104, 180, 134);
 }
 #radio3:checked ~ .captions .text:nth-child(3) {
-  transform: translateX(0);
-  opacity: 1;
-}
-@media (max-width: 1280px) {
-  #radio3:checked ~ .captions .text:nth-child(3) {
-    transform: translateX(-50%);
-  }
+  display: inline-block;
 }
 #radio3:checked ~ .container .slides img:nth-child(3) {
   opacity: 1;
@@ -239,13 +218,7 @@ input {
   border-color: rgb(104, 180, 134);
 }
 #radio4:checked ~ .captions .text:nth-child(4) {
-  transform: translateX(0);
-  opacity: 1;
-}
-@media (max-width: 1280px) {
-  #radio4:checked ~ .captions .text:nth-child(4) {
-    transform: translateX(-50%);
-  }
+  display: inline-block;
 }
 #radio4:checked ~ .container .slides img:nth-child(4) {
   opacity: 1;
@@ -274,4 +247,13 @@ input {
 
 #radio4:checked ~ .container .slides img:nth-child(1) {
   margin-left: -75%;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
