@@ -205,7 +205,7 @@ input {
 
 #radio2 ~ .controls label div:active:nth-child(2) {
   background-color: rgb(216, 211, 211);
-  border-color: rgb(216, 211, 211);
+  border-color: rgb(216, 211, 211) !important;
 }
 
 #radio3:checked ~ .controls label:nth-child(3) div {
