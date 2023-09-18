@@ -8,17 +8,17 @@ html {
   justify-content: center;
   align-items: center;
   height: 100%;
-  padding: 15px;
-  background: url('./img/29-39.jpg') no-repeat right bottom/350px,
-    url('./img/cartoons-spongebob-yellow-background-tooth-face-wallpaper-preview.jpg')
-      no-repeat left top/300px,
-    linear-gradient(
-      110deg,
-      rgb(252, 246, 106) 0%,
-      rgb(252, 246, 106) 48%,
-      rgb(255, 181, 159) 51%,
-      rgb(255, 181, 159) 100%
-    );
+  padding: 1rem;
+  background: url('./img/29-39.jpg') no-repeat right bottom/22rem,
+  url('./img/cartoons-spongebob-yellow-background-tooth-face-wallpaper-preview.jpg')
+  no-repeat left top/19rem,
+  linear-gradient(
+  110deg,
+  rgb(252, 246, 106) 0%,
+  rgb(252, 246, 106) 48%,
+  rgb(255, 181, 159) 51%,
+  rgb(255, 181, 159) 100%
+  );
 
   -webkit-tap-highlight-color: transparent;
 }
@@ -26,11 +26,11 @@ html {
 @media (max-width: 1280px) {
   html {
     background: linear-gradient(
-      180deg,
-      rgb(252, 246, 106) 0%,
-      rgb(252, 246, 106) 48%,
-      rgb(255, 181, 159) 51%,
-      rgb(255, 181, 159) 100%
+    180deg,
+    rgb(252, 246, 106) 0%,
+    rgb(252, 246, 106) 48%,
+    rgb(255, 181, 159) 51%,
+    rgb(255, 181, 159) 100%
     );
   }
 }
@@ -39,7 +39,7 @@ body {
   display: grid;
   grid-template-rows: auto auto;
   grid-template-columns: auto auto;
-  grid-row-gap: 20px;
+  grid-row-gap: 1.25rem;
   margin: 0;
 }
 
@@ -55,8 +55,8 @@ input {
 }
 
 .container {
-  max-width: 500px;
-  height: 500px;
+  max-width: 31.25rem;
+  max-height: 31.25rem;
   overflow: hidden;
 
   grid-column: 1 / span 2;
@@ -97,11 +97,11 @@ input {
 }
 .captions .text {
   display: none;
-  padding: 15px;
+  padding: 1rem;
   font-family: 'Gagalin', sans-serif;
-  font-size: 30px;
+  font-size: 1.875rem;
   background-color: rgba(194, 193, 193, 0.5);
-  border-radius: 15px;
+  border-radius: 1rem;
   opacity: 0;
   transition: 0.4s;
   animation: fadeIn 0.5s ease forwards;
@@ -116,11 +116,11 @@ input {
   justify-content: center;
   justify-self: end;
   align-items: center;
-  width: 170px;
-  height: 50px;
-  column-gap: 10px;
+  width: 11rem;
+  height: 3rem;
+  column-gap: 0.625rem;
   background-color: rgba(194, 193, 193, 0.5);
-  border-radius: 15px;
+  border-radius: 1rem;
 }
 @media (max-width: 1280px) {
   .controls {
@@ -133,15 +133,15 @@ input {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 30px;
-  height: 30px;
+  width: 1.875rem;
+  height: 1.875rem;
   border-radius: 50%;
 }
 .controls > label div {
-  width: 15px;
-  height: 15px;
+  width: 1rem;
+  height: 1rem;
   background-color: rgb(104, 180, 134);
-  border: 3px solid rgb(104, 180, 134);
+  border: 0.1875rem solid rgb(104, 180, 134);
   border-radius: 50%;
   transition: 0.3s;
 }
@@ -150,7 +150,7 @@ input {
 }
 .controls > label:hover div {
   background-color: white;
-  border: 3px solid white;
+  border: 0.1875rem solid white;
 }
 
 #radio1:checked ~ .controls label:nth-child(1) div {
