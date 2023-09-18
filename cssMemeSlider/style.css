@@ -1,0 +1,259 @@
+@font-face {
+  font-family: 'Gagalin';
+  src: url('./ofont.ru_Gagalin.ttf') format('truetype');
+}
+
+html {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 1rem;
+  background: url('./img/29-39.jpg') no-repeat right bottom/22rem,
+  url('./img/cartoons-spongebob-yellow-background-tooth-face-wallpaper-preview.jpg')
+  no-repeat left top/19rem,
+  linear-gradient(
+  110deg,
+  rgb(252, 246, 106) 0%,
+  rgb(252, 246, 106) 48%,
+  rgb(255, 181, 159) 51%,
+  rgb(255, 181, 159) 100%
+  );
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (max-width: 1280px) {
+  html {
+    background: linear-gradient(
+    180deg,
+    rgb(252, 246, 106) 0%,
+    rgb(252, 246, 106) 48%,
+    rgb(255, 181, 159) 51%,
+    rgb(255, 181, 159) 100%
+    );
+  }
+}
+
+body {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: auto auto;
+  grid-row-gap: 1.25rem;
+  margin: 0;
+}
+
+@media (max-width: 1280px) {
+  body {
+    grid-template-rows: auto auto auto;
+    grid-template-columns: auto;
+  }
+}
+
+input {
+  display: none;
+}
+
+.container {
+  max-width: 31.25rem;
+  max-height: 31.25rem;
+  overflow: hidden;
+
+  grid-column: 1 / span 2;
+}
+@media (max-width: 1280px) {
+  .container {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+}
+.container .slides {
+  display: flex;
+  width: 400%;
+  height: 100%;
+}
+.container .slides > img {
+  display: flex;
+  align-self: end;
+  width: 25%;
+  height: 100%;
+  opacity: 0;
+  transition: 0.3s ease-out;
+  object-fit: contain;
+}
+
+.captions {
+}
+@media (max-width: 1280px) {
+  .captions {
+    justify-self: center;
+
+    grid-row: 3/4;
+  }
+}
+.captions-flex-container {
+  display: flex;
+  width: 400%;
+}
+.captions .text {
+  display: none;
+  padding: 1rem;
+  font-family: 'Gagalin', sans-serif;
+  font-size: 1.875rem;
+  background-color: rgba(194, 193, 193, 0.5);
+  border-radius: 1rem;
+  opacity: 0;
+  transition: 0.4s;
+  animation: fadeIn 0.5s ease forwards;
+}
+.captions p {
+  margin: 0;
+  white-space: nowrap;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  justify-self: end;
+  align-items: center;
+  width: 11rem;
+  height: 3rem;
+  column-gap: 0.625rem;
+  background-color: rgba(194, 193, 193, 0.5);
+  border-radius: 1rem;
+}
+@media (max-width: 1280px) {
+  .controls {
+    justify-self: center;
+
+    grid-row: 2/3;
+  }
+}
+.controls > label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.875rem;
+  height: 1.875rem;
+  border-radius: 50%;
+}
+.controls > label div {
+  width: 1rem;
+  height: 1rem;
+  background-color: rgb(104, 180, 134);
+  border: 0.1875rem solid rgb(104, 180, 134);
+  border-radius: 50%;
+  transition: 0.3s;
+}
+.controls > label:hover {
+  cursor: pointer;
+}
+.controls > label:hover div {
+  background-color: white;
+  border: 0.1875rem solid white;
+}
+
+#radio1:checked ~ .controls label:nth-child(1) div {
+  background-color: black;
+  border-color: rgb(104, 180, 134);
+}
+#radio1:checked ~ .captions .text:nth-child(1) {
+  display: inline-block;
+}
+#radio1:checked ~ .container .slides img:nth-child(1) {
+  opacity: 1;
+}
+
+#radio1 ~ .controls label:nth-child(1):hover div {
+  border-color: white;
+}
+
+#radio1 ~ .controls label div:active:nth-child(1) {
+  background-color: rgb(216, 211, 211);
+  border-color: rgb(216, 211, 211) !important;
+}
+
+#radio2:checked ~ .controls label:nth-child(2) div {
+  background-color: black;
+  border-color: rgb(104, 180, 134);
+}
+#radio2:checked ~ .captions .text:nth-child(2) {
+  display: inline-block;
+}
+#radio2:checked ~ .container .slides img:nth-child(2) {
+  opacity: 1;
+}
+
+#radio2 ~ .controls label:nth-child(2):hover div {
+  border-color: white;
+}
+
+#radio2 ~ .controls label div:active:nth-child(2) {
+  background-color: rgb(216, 211, 211);
+  border-color: rgb(216, 211, 211) !important;
+}
+
+#radio3:checked ~ .controls label:nth-child(3) div {
+  background-color: black;
+  border-color: rgb(104, 180, 134);
+}
+#radio3:checked ~ .captions .text:nth-child(3) {
+  display: inline-block;
+}
+#radio3:checked ~ .container .slides img:nth-child(3) {
+  opacity: 1;
+}
+
+#radio3 ~ .controls label:nth-child(3):hover div {
+  border-color: white;
+}
+
+#radio3 ~ .controls label div:active:nth-child(3) {
+  background-color: rgb(216, 211, 211);
+  border-color: rgb(216, 211, 211) !important;
+}
+
+#radio4:checked ~ .controls label:nth-child(4) div {
+  background-color: black;
+  border-color: rgb(104, 180, 134);
+}
+#radio4:checked ~ .captions .text:nth-child(4) {
+  display: inline-block;
+}
+#radio4:checked ~ .container .slides img:nth-child(4) {
+  opacity: 1;
+}
+
+#radio4 ~ .controls label:nth-child(4):hover div {
+  border-color: white;
+}
+
+#radio4 ~ .controls label div:active:nth-child(4) {
+  background-color: rgb(216, 211, 211);
+  border-color: rgb(216, 211, 211) !important;
+}
+
+#radio1:checked ~ .container .slides img:nth-child(1) {
+  margin-left: 0;
+}
+
+#radio2:checked ~ .container .slides img:nth-child(1) {
+  margin-left: -25%;
+}
+
+#radio3:checked ~ .container .slides img:nth-child(1) {
+  margin-left: -50%;
+}
+
+#radio4:checked ~ .container .slides img:nth-child(1) {
+  margin-left: -75%;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
